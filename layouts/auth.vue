@@ -2,7 +2,7 @@
   <div
     class="w-100 h-screen d-flex justify-center align-center"
     :class="{
-      'fade-blue': themeState == 'dark',
+      'fade-dark': themeState == 'dark',
       'fade-blue': themeState == 'light',
     }"
   >

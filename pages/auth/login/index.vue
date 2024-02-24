@@ -21,6 +21,7 @@
     <CoreButton class="w-100" name="Login" color="primary" />
     <ShareSocial />
     <Version />
+    <ThemeSwitcher class="mt-2" />
   </div>
 </template>
 
