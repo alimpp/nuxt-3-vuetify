@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fade-blue {
+  background: rgb(197, 211, 246);
+  background: linear-gradient(
+    157deg,
+    rgba(197, 211, 246, 1) 8%,
+    rgba(226, 232, 254, 1) 41%,
+    rgba(255, 255, 255, 1) 75%
+  );
+}
+
+.active-route {
+  border-bottom: 3px solid #fd7403;
+}
+
+.link-style {
+  text-decoration: none;
+  list-style: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0 5px;
+  color: #816fe9;
+}
+
+// ** global scrollbar ui setting ** //
+::-webkit-scrollbar {
+  width: 0px;
+  border: 0px solid #2c2c2c;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background: #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #cac8c8;
+}
+
+// ** global app animation ** //
+.fade-animation {
+  animation: 1.5s application_animation;
+}
+@keyframes fade-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
