@@ -1,7 +1,7 @@
 import { useToast } from "vue-toastification"
 const toast = useToast();
 
-export const successToast = (position: any, text: string) => {
+export const Success = (position: any, text: string) => {
     toast.success(text, {
         position: position,
         timeout: 3000,
@@ -9,15 +9,7 @@ export const successToast = (position: any, text: string) => {
     });
 }
 
-export const infoToast = (position: any, text: string) => {
-    toast.info(text, {
-        position: position,
-        timeout: 3000,
-        hideProgressBar: false,
-    });
-}
-
-export const warningToast = (position: any, text: string) => {
+export const Warning = (position: any, text: string) => {
     toast.warning(text, {
         position: position,
         timeout: 3000,
@@ -25,7 +17,7 @@ export const warningToast = (position: any, text: string) => {
     });
 }
 
-export const errorToast = (position: any, text: string) => {
+export const Error = (position: any, text: string) => {
     toast.error(text, {
         position: position,
         timeout: 3000,

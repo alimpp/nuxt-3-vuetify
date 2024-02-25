@@ -5,8 +5,11 @@ export const validEmail = (email: string) => {
 };
 
 export const validMobileNumber = (phoneNumber: any) => {
-  const reg = /^(\d+-?)+\d+$/;
-  return reg.test(phoneNumber);
+  if (phoneNumber.length == 11) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 export const validNumber = (param: any) => {

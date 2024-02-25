@@ -10,7 +10,7 @@
       class="w-100"
       label="Phone Number"
       type="text"
-      v-model="form.phoneNumber"
+      v-model="form.mobile"
     />
     <CoreInput
       class="w-100"
@@ -18,7 +18,7 @@
       type="password"
       v-model="form.password"
     />
-    <CoreButton class="w-100" name="Login" color="primary" />
+    <CoreButton class="w-100" name="Login" color="primary" @click="login" />
     <ShareSocial />
     <Version />
     <ThemeSwitcher class="mt-2" />
@@ -26,21 +26,38 @@
 </template>
 
 <script setup>
-import { useTheme } from "@/stores/theme/index.ts";
-
 definePageMeta({
   layout: "auth",
 });
 
 const form = ref({
-  phoneNumber: "",
+  mobile: "",
   password: "",
 });
-const Theme = useTheme();
 
-const themeState = computed(() => {
-  return Theme.theme;
-});
+const login = async () => {
+  const response = await $fetch("/api/auth/login", {
+    method: "POST",
+    body: form.value,
+  });
+  console.log(response);
+};
+
+// const login = async () => {
+//   try {
+//     const response = await $fetch(`https://alaatv.com/api/v2/login`, {
+//       method: "POST",
+//       body: form.value,
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     });
+//     console.log(response);
+//   } catch (error) {
+//     console.log(error);
+//     return error;
+//   }
+// };
 </script>
 
 <style scoped lang="scss">

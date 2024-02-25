@@ -1,7 +1,6 @@
-export const applicationPath = {
-  BASE_URL: '',
+export const ApplicationPath = {
+  BASE_URL: 'https://alaatv.com/api/v2',
   AUTH: {
-    REGISTER: '',
-    LOGIN: ''
+    LOGIN: '/login'
   }
 }

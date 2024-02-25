@@ -1,12 +1,17 @@
 <template>
-  <v-text-field
-    clearable
-    :model-value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
-    :label="label"
-    :type="type"
-    variant="outlined"
-  ></v-text-field>
+  <div class="d-flex flex-column">
+    <v-text-field
+      clearable
+      :model-value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+      :label="label"
+      :type="type"
+      variant="outlined"
+    ></v-text-field>
+    <span class="app-font-size-12 text-danger" v-if="error">{{
+      messageError
+    }}</span>
+  </div>
 </template>
 
 <script setup>
