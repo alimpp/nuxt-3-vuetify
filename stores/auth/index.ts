@@ -6,11 +6,7 @@ export const useAuth = defineStore("auth", {
 
   actions: {
     async handleLogin(param: object) {
-      const response = await $fetch("/api/auth/login", {
-        method: "POST",
-        body: param,
-      });
-      //const response = await LoginApi(param);
+      const response = await LoginApi(param);
       console.log(response);
     },
   },

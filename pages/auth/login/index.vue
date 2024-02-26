@@ -39,7 +39,13 @@ const form = ref({
 });
 
 const login = async () => {
-  await Auth.handleLogin(form.value);
+  const response = await $fetch("/api/auth/login", {
+    method: "POST",
+    body: form.value,
+    server: true,
+  });
+  console.log(response);
+  // await Auth.handleLogin(form.value);
 };
 </script>
 
