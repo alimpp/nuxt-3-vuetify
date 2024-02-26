@@ -26,38 +26,21 @@
 </template>
 
 <script setup>
+import { useAuth } from "@/stores/auth/index.ts";
+
 definePageMeta({
   layout: "auth",
 });
 
+const Auth = useAuth();
 const form = ref({
   mobile: "",
   password: "",
 });
 
 const login = async () => {
-  const response = await $fetch("/api/auth/login", {
-    method: "POST",
-    body: form.value,
-  });
-  console.log(response);
+  await Auth.handleLogin(form.value);
 };
-
-// const login = async () => {
-//   try {
-//     const response = await $fetch(`https://alaatv.com/api/v2/login`, {
-//       method: "POST",
-//       body: form.value,
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//     });
-//     console.log(response);
-//   } catch (error) {
-//     console.log(error);
-//     return error;
-//   }
-// };
 </script>
 
 <style scoped lang="scss">
