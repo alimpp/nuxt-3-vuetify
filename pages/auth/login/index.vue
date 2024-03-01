@@ -4,7 +4,7 @@
   >
     <div class="d-flex align-center mb-5">
       <BootstrapIconPersonFill />
-      <span class="app-font-size-18 px-1 pt-1">Sign in With Nuxt 3</span>
+      <span class="app-font-size-18 px-1 pt-1">SIGN IN WITH NUXT 3</span>
     </div>
     <CoreInput
       class="w-100"
@@ -39,13 +39,7 @@ const form = ref({
 });
 
 const login = async () => {
-  const response = await $fetch("/api/auth/login", {
-    method: "POST",
-    body: form.value,
-    server: true,
-  });
-  console.log(response);
-  // await Auth.handleLogin(form.value);
+  await Auth.authenticationUser(form.value);
 };
 </script>
 
